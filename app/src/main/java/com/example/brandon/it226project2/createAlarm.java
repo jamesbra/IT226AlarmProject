@@ -22,7 +22,7 @@ public class createAlarm extends AppCompatActivity  {
         Button specificAlarmButton = (Button) findViewById(R.id.specific_alarm_button);
         Button location = (Button) findViewById(R.id.location_button);
 
-        buildCurrentDate();
+        //buildCurrentDate();
         location.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -54,9 +54,9 @@ public class createAlarm extends AppCompatActivity  {
 
 
     public void buildCurrentDate(){
-        Calendar c = Calendar.getInstance();
-        String date = "Alarm date:\n" + c.get(Calendar.MONTH) + "-" + c.get(Calendar.DAY_OF_MONTH) + "-" + c.get(Calendar.YEAR);
-        TextView currentDateText = (TextView) findViewById(R.id.current_date_selected);
-        currentDateText.setText(date);
+        //Calendar c = Calendar.getInstance();
+        //String date = "Alarm date:\n" + c.get(Calendar.MONTH) + "-" + c.get(Calendar.DAY_OF_MONTH) + "-" + c.get(Calendar.YEAR);
+        //TextView currentDateText = (TextView) findViewById(R.id.current_date_selected);
+        //currentDateText.setText(date);
     }
 }
