@@ -3,20 +3,14 @@ package com.example.brandon.it226project2;
 import android.widget.DatePicker;
 import android.app.DatePickerDialog;
 import android.app.DialogFragment;
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.app.Dialog;
-
 import java.util.Calendar;
 
 
 
 public class DateDialogFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+
 
     public Dialog onCreateDialog(Bundle savedInstanceState){
         final Calendar c = Calendar.getInstance();
@@ -28,7 +22,8 @@ public class DateDialogFragment extends DialogFragment implements DatePickerDial
     }
 
     public void onDateSet(DatePicker view, int year, int month, int day){
-        String date = month + "-" + day + "-" + year;
+        String date = "Alarm date:\n" + month + "-" + day + "-" + year;
+
     }
 
 }
