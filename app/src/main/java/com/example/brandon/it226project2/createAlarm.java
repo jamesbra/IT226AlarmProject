@@ -18,7 +18,7 @@ public class createAlarm extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_alarm);
 
-        Button confirm = (Button) findViewById(R.id.confirm_button);
+        Button timerAlarmButton = (Button) findViewById(R.id.timer_alarm_button);
         Button specificAlarmButton = (Button) findViewById(R.id.specific_alarm_button);
         Button location = (Button) findViewById(R.id.location_button);
 
@@ -26,7 +26,8 @@ public class createAlarm extends AppCompatActivity  {
         location.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-
+                Intent locationAlarmIntent = new Intent(createAlarm.this,LocationAlarm.class);
+                startActivity(locationAlarmIntent);
             }
         });
         specificAlarmButton.setOnClickListener(new View.OnClickListener() {
@@ -37,12 +38,14 @@ public class createAlarm extends AppCompatActivity  {
                 //showDatePickerDialog(v);
             }
         });
-        confirm.setOnClickListener(new View.OnClickListener() {
+        timerAlarmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //final TimePicker time = (TimePicker) findViewById(R.id.timePicker);
                 //int hour = time.getHour();
                 //int minute = time.getMinute();
+                Intent timerAlarmIntent = new Intent(createAlarm.this,TimerAlarm.class);
+                startActivity(timerAlarmIntent);
 
             }
         });

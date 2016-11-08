@@ -38,6 +38,10 @@
         </activity>
         <activity android:name=".SpecificAlarm">
         </activity>
+        <activity android:name=".TimerAlarm">
+        </activity>
+        <activity android:name=".LocationAlarm">
+        </activity>
     </application>
 
 </manifest>

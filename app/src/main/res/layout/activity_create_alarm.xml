@@ -11,54 +11,31 @@
         tools:context="com.example.brandon.it226project2.createAlarm">
 
     <Button
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:text="Save alarm"
-            android:id="@+id/confirm_button"
-            android:textStyle="bold"
-            android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"/>
-    <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:text="Specific Alarm"
             android:id="@+id/specific_alarm_button"
-            android:layout_above="@+id/location_button" android:layout_alignParentEnd="true"/>
+            android:layout_alignParentTop="true" android:layout_alignParentEnd="true" android:layout_marginTop="94dp"/>
     <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
             android:text="Location Alarm"
 
             android:id="@+id/location_button"
-            android:layout_centerHorizontal="true"
-            android:layout_above="@+id/current_date_selected" android:layout_marginTop="20dp"/>
-    <EditText
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:id="@+id/alarm_text"
-            android:editable="true"
-            android:clickable="true" android:hint="Text for alarm"
-            android:maxLines="1"
-            android:inputType="text"
-            android:layout_above="@+id/checkBox" android:layout_centerHorizontal="true"
-            android:layout_marginBottom="0dp"/>
-    <TextView
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:id="@+id/current_date_selected"
-            android:textAlignment="center" android:textSize="20dp" android:textStyle="normal"
-            android:layout_alignStart="@+id/alarm_text" android:layout_above="@+id/alarm_text"
-            android:layout_marginTop="20dp" android:layout_marginBottom="20dp"/>
-    <CheckBox
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:text="Recursive Alarm?"
-            android:id="@+id/checkBox"
-            android:layout_above="@+id/confirm_button" android:layout_alignEnd="@+id/location_button"/>
+            android:layout_marginTop="161dp" android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
     <Button
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:text="Timer Alarm"
-            android:id="@+id/timer_alarm"
-            android:layout_above="@+id/location_button" android:layout_alignParentStart="true"/>
+            android:id="@+id/timer_alarm_button"
+            android:layout_alignTop="@+id/specific_alarm_button" android:layout_alignParentStart="true"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Choose alarm type:"
+            android:id="@+id/textView3" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"/>
 </RelativeLayout>
