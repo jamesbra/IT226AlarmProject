@@ -7,9 +7,11 @@
             android:minSdkVersion="23"
             android:targetSdkVersion="23"/>
 
-    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
             android:allowBackup="true"
@@ -42,6 +44,18 @@
         </activity>
         <activity android:name=".LocationAlarm">
         </activity>
+
+        <receiver
+                android:name=".Alarm_Broadcast_Receiver"
+                android:enabled="true"
+                android:exported="true">
+        </receiver>
+
+        <service
+                android:name=".AlarmSoundService"
+                android:enabled="true"
+                android:exported="true">
+        </service>
     </application>
 
 </manifest>

@@ -21,6 +21,7 @@ public class DateDialogFragment extends DialogFragment implements DatePickerDial
 
     }
 
+    
     public void onDateSet(DatePicker view, int year, int month, int day){
         String date = "Alarm date:\n" + month + "-" + day + "-" + year;
 

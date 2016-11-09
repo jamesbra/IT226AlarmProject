@@ -1,5 +1,6 @@
 package com.example.brandon.it226project2;
 
+import android.app.AlarmManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -12,13 +13,15 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+    AlarmManager alarm_manager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        alarm_manager = (AlarmManager) getSystemService(ALARM_SERVICE);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {

@@ -16,41 +16,60 @@
             android:text="Date"
             android:id="@+id/pick_date_button"
             android:layout_marginTop="56dp"
-            android:layout_alignParentTop="true" android:layout_toStartOf="@+id/button"/>
+            android:layout_alignParentTop="true" android:layout_toStartOf="@+id/confirm_button"/>
     <Button
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="Time"
             android:id="@+id/pick_time_button"
-            android:layout_alignTop="@+id/pick_date_button" android:layout_toEndOf="@+id/button"/>
-    <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recursive Alarm?"
-            android:id="@+id/checkBox2"
-            android:layout_marginBottom="52dp" android:layout_above="@+id/button"
-            android:layout_centerHorizontal="true"/>
+            android:layout_alignTop="@+id/pick_date_button" android:layout_toEndOf="@+id/confirm_button"/>
     <Button
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:text="Confirm"
-            android:id="@+id/button"
+            android:id="@+id/confirm_button"
             android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Date Selected:"
-            android:id="@+id/textView"
+            android:id="@+id/date_text"
             android:textSize="18dp"
             android:layout_marginTop="28dp"
             android:layout_below="@+id/pick_date_button" android:layout_alignStart="@+id/pick_date_button"/>
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Time Selected:"
-              android:id="@+id/textView2" android:textSize="18dp"
-              android:singleLine="true" android:textAlignment="center" android:layout_alignTop="@+id/textView"
+              android:id="@+id/time_text" android:textSize="18dp"
+              android:singleLine="true" android:textAlignment="center" android:layout_alignTop="@+id/date_text"
               android:layout_alignEnd="@+id/pick_time_button"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editText" android:layout_centerVertical="true" android:layout_alignEnd="@+id/checkBox2"
-            android:layout_alignStart="@+id/checkBox2" android:hint="Alarm text..."/>
+            android:id="@+id/alarm_text"
+            android:hint="Alarm text..." android:maxLines="1"
+            android:inputType="text"
+            android:layout_above="@+id/confirm_button" android:layout_alignStart="@+id/confirm_button"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/time_selected" android:textSize="18dp" android:singleLine="true"
+              android:textAlignment="center"
+              android:layout_below="@+id/time_text" android:layout_alignStart="@+id/time_text"
+              android:layout_alignEnd="@+id/time_text"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/date_selected" android:textSize="18dp"
+              android:layout_below="@+id/date_text" android:layout_alignEnd="@+id/date_text"
+              android:layout_alignStart="@+id/date_text" android:layout_alignBottom="@+id/time_selected"
+              android:textAlignment="center"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toggle Repeat"
+            android:id="@+id/repeat_button"
+            android:layout_above="@+id/alarm_text" android:layout_centerHorizontal="true"
+            android:layout_marginBottom="36dp" android:layout_marginTop="10dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="&quot;Alarm will not repeat every week&quot;"
+            android:id="@+id/repeat_text"
+            android:textAlignment="center" android:textSize="20dp"
+            android:layout_above="@+id/repeat_button" android:layout_centerHorizontal="true"/>
 </RelativeLayout>
