@@ -15,8 +15,7 @@
             android:layout_height="wrap_content"
             android:text="Date"
             android:id="@+id/pick_date_button"
-            android:layout_marginTop="56dp"
-            android:layout_alignParentTop="true" android:layout_toStartOf="@+id/confirm_button"/>
+            android:layout_alignParentTop="true" android:layout_toStartOf="@+id/alarm_text"/>
     <Button
             android:layout_width="100dp"
             android:layout_height="wrap_content"
@@ -64,12 +63,29 @@
             android:text="Toggle Repeat"
             android:id="@+id/repeat_button"
             android:layout_above="@+id/alarm_text" android:layout_centerHorizontal="true"
-            android:layout_marginBottom="36dp" android:layout_marginTop="10dp"/>
+            android:layout_marginBottom="15dp"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alarm will not repeat every week"
+            android:text="Alarm will not repeat every day"
             android:id="@+id/repeat_text"
             android:textAlignment="center" android:textSize="20dp"
             android:layout_above="@+id/repeat_button" android:layout_centerHorizontal="true"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Longitude:"
+              android:id="@+id/textView2" android:textSize="18dp" android:layout_marginTop="40dp"
+              android:layout_below="@+id/time_selected" android:layout_alignStart="@+id/pick_time_button"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Latitude:"
+              android:id="@+id/textView4" android:textSize="18dp"
+              android:layout_alignBaseline="@+id/textView2" android:layout_alignBottom="@+id/textView2"
+              android:layout_toStartOf="@+id/repeat_button"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/user_latitude"
+            android:layout_below="@+id/textView4"
+            android:layout_marginTop="23dp" android:layout_alignStart="@+id/textView4"
+            android:layout_alignEnd="@+id/textView4"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/user_longitude"
+              android:layout_alignBottom="@+id/user_latitude"
+              android:layout_alignStart="@+id/textView2" android:layout_alignEnd="@+id/textView2"/>
 </RelativeLayout>

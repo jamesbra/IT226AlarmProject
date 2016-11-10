@@ -19,6 +19,7 @@ public class LocationAlarm extends AppCompatActivity implements GoogleApiClient.
 
     TextView latitudeText;
     TextView longitudeText;
+
     private FusedLocationProviderApi locationProvider = LocationServices.FusedLocationApi;
     private GoogleApiClient googleApiClient;
     private LocationRequest locationRequest;
@@ -108,6 +109,7 @@ public class LocationAlarm extends AppCompatActivity implements GoogleApiClient.
     protected void onStop() {
         super.onStop();
         googleApiClient.disconnect();
+
     }
 
     @Override

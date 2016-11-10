@@ -15,6 +15,7 @@ public class SpecificAlarm extends AppCompatActivity {
     private boolean reoccurring = false;
     private boolean timePicked = false;
     private boolean datePicked = false;
+    private boolean alarmDateIsToday;
     private int daySelected;
     private int monthSelected;
     private int yearSelected;
@@ -34,6 +35,8 @@ public class SpecificAlarm extends AppCompatActivity {
         Button pickTimeButton = (Button) findViewById(R.id.pick_time_button);
         Button confirmButton = (Button) findViewById(R.id.confirm_button);
         Button repeatButton = (Button) findViewById(R.id.repeat_button);
+
+        final EditText userAlarmText = (EditText) findViewById(R.id.alarm_text);
         final TextView repeatingTextView = (TextView) findViewById(R.id.repeat_text);
         final Calendar c = Calendar.getInstance();
         daySelected = c.get(Calendar.DAY_OF_MONTH);
@@ -60,14 +63,32 @@ public class SpecificAlarm extends AppCompatActivity {
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+                Calendar current = Calendar.getInstance();
+                if (alarmDateIsToday){
+                    if (hourSelected <= current.get(Calendar.HOUR_OF_DAY) && minuteSelected <= current.get(Calendar.MINUTE)){
+                        Toast.makeText(SpecificAlarm.this,"Time is in the past! Please select a time in the future.",Toast.LENGTH_LONG).show();
+                        return;
+                    }
+                }
                 if (timePicked && datePicked) {
+                    c.set(Calendar.MONTH,monthSelected);
+                    c.set(Calendar.DAY_OF_MONTH,daySelected);
+                    c.set(Calendar.YEAR,yearSelected);
                     c.set(Calendar.HOUR_OF_DAY,hourSelected);
                     c.set(Calendar.MINUTE,minuteSelected);
+                    c.set(Calendar.SECOND,0);
+                    c.set(Calendar.MILLISECOND,0);
                     pending_intent = PendingIntent.getBroadcast(SpecificAlarm.this,0,my_intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                    alarm_manager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(),pending_intent);
-//                    Bundle bundle = new Bundle();
-//                    bundle.putInt("time_hour", hourSelected);
-//                    bundle.putInt("time_minute", minuteSelected);
+                    if (reoccurring){
+                        alarm_manager.setInexactRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), 60*1000,pending_intent);
+                    }
+                    else{
+                        alarm_manager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(),pending_intent);
+                    }
+
+                    String alarmText = userAlarmText.getText().toString();
+                    Toast.makeText(SpecificAlarm.this,"Alarm Added",Toast.LENGTH_LONG).show();
+                    finish();
                 }
                 else{
                     Toast.makeText(SpecificAlarm.this,"Please pick date/time",Toast.LENGTH_LONG).show();
@@ -81,14 +102,16 @@ public class SpecificAlarm extends AppCompatActivity {
                 reoccurring = !reoccurring;
                 String output;
                 if (reoccurring){
-                    output = "Alarm will repeat every week";
+                    output = "Alarm will repeat every day";
                 }
                 else{
-                    output = "Alarm will not repeat every week";
+                    output = "Alarm will not repeat every day";
                 }
                 repeatingTextView.setText(output);
             }
         });
+
+
     }
 
     @Override
@@ -100,16 +123,28 @@ public class SpecificAlarm extends AppCompatActivity {
             return new TimePickerDialog(this,timePickerListener,hourSelected,minuteSelected, DateFormat.is24HourFormat(this));
     }
 
+
     private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener(){
         @Override
-        public void onDateSet(DatePicker view, int year, int month, int day){
-            yearSelected = year;
-            monthSelected = month;
-            daySelected = day;
-            TextView dateSelected = (TextView) findViewById(R.id.date_selected);
-            String output = monthSelected + "-" + daySelected + "-" + yearSelected;
-            datePicked = true;
-            dateSelected.setText(output);
+        public void onDateSet(DatePicker view, int year, int month, int day) {
+            Calendar current = Calendar.getInstance();
+            if (year == current.get(Calendar.YEAR) && month == current.get(Calendar.MONTH) && day == current.get(Calendar.DAY_OF_MONTH) ){
+                alarmDateIsToday = true;
+            }
+
+            if (year < current.get(Calendar.YEAR) && month < current.get(Calendar.MONTH) && day < current.get(Calendar.DAY_OF_MONTH)) {
+                Toast.makeText(SpecificAlarm.this, "Date in is the past! Please select new date.", Toast.LENGTH_LONG).show();
+            }
+            else{
+                yearSelected = year;
+                monthSelected = month;
+                daySelected = day;
+                TextView dateSelected = (TextView) findViewById(R.id.date_selected);
+                String output = monthSelected + "-" + daySelected + "-" + yearSelected;
+                datePicked = true;
+                dateSelected.setText(output);
+            }
+
 
         }
     };

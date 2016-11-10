@@ -1,8 +1,6 @@
 package com.example.brandon.it226project2;
 
-import android.app.DatePickerDialog;
-import android.app.DialogFragment;
-import android.app.FragmentTransaction;
+import android.app.*;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,7 +19,7 @@ public class createAlarm extends AppCompatActivity  {
         Button timerAlarmButton = (Button) findViewById(R.id.timer_alarm_button);
         Button specificAlarmButton = (Button) findViewById(R.id.specific_alarm_button);
         Button location = (Button) findViewById(R.id.location_button);
-
+        Button cancelButton = (Button) findViewById(R.id.cancel_button);
         //buildCurrentDate();
         location.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -47,6 +45,16 @@ public class createAlarm extends AppCompatActivity  {
                 Intent timerAlarmIntent = new Intent(createAlarm.this,TimerAlarm.class);
                 startActivity(timerAlarmIntent);
 
+            }
+        });
+
+        cancelButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent (createAlarm.this, AlarmSoundService.class);
+                PendingIntent sender = PendingIntent.getBroadcast(createAlarm.this,0,intent,0);
+                AlarmManager alarm_manager = (AlarmManager) getSystemService(ALARM_SERVICE);
+                alarm_manager.cancel(sender);
             }
         });
 
