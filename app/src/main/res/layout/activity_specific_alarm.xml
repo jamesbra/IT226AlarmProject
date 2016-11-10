@@ -46,7 +46,7 @@
             android:id="@+id/alarm_text"
             android:hint="Alarm text..." android:maxLines="1"
             android:inputType="text"
-            android:layout_above="@+id/confirm_button" android:layout_alignStart="@+id/confirm_button"/>
+            android:layout_above="@+id/confirm_button" android:layout_centerHorizontal="true"/>
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
               android:id="@+id/time_selected" android:textSize="18dp" android:singleLine="true"
               android:textAlignment="center"
@@ -79,13 +79,11 @@
               android:layout_alignBaseline="@+id/textView2" android:layout_alignBottom="@+id/textView2"
               android:layout_toStartOf="@+id/repeat_button"/>
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
             android:id="@+id/user_latitude"
-            android:layout_below="@+id/textView4"
-            android:layout_marginTop="23dp" android:layout_alignStart="@+id/textView4"
-            android:layout_alignEnd="@+id/textView4"/>
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/user_longitude"
-              android:layout_alignBottom="@+id/user_latitude"
-              android:layout_alignStart="@+id/textView2" android:layout_alignEnd="@+id/textView2"/>
+            android:layout_below="@+id/textView4" android:layout_toStartOf="@+id/confirm_button"
+            android:layout_marginTop="22dp"/>
+    <TextView android:layout_width="100dp" android:layout_height="25dp" android:id="@+id/user_longitude"
+              android:layout_alignTop="@+id/user_latitude" android:layout_alignStart="@+id/textView2"/>
 </RelativeLayout>

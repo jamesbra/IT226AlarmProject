@@ -38,10 +38,4 @@
             android:text="Choose alarm type:"
             android:id="@+id/textView3" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"/>
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cancel All Alarms"
-            android:id="@+id/cancel_button" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"
-            android:layout_marginBottom="78dp"/>
 </RelativeLayout>
