@@ -15,12 +15,16 @@ public class SpecificAlarm extends AppCompatActivity {
         setContentView(R.layout.activity_specific_alarm);
         Button pickDateButton = (Button) findViewById(R.id.pick_date_button);
         Button pickTimeButton = (Button) findViewById(R.id.pick_time_button);
-        pickDateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDatePickerDialog(v);
-            }
-        });
+        pickDateButton.setOnClickListener(
+                new View.OnClickListener()
+                {
+                @Override
+                public void onClick(View v)
+                {
+                    showDatePickerDialog(v);
+                }
+                }
+        );
 
         pickTimeButton.setOnClickListener(new View.OnClickListener() {
             @Override

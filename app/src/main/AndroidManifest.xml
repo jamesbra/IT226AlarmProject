@@ -7,9 +7,9 @@
             android:minSdkVersion="23"
             android:targetSdkVersion="23"/>
 
-    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
             android:allowBackup="true"
@@ -38,7 +38,8 @@
         </activity>
         <activity android:name=".SpecificAlarm">
         </activity>
-        <activity android:name=".TimerAlarm">
+        <activity android:name=".TimerAlarm"
+            android:launchMode="singleInstance">
         </activity>
         <activity android:name=".LocationAlarm">
         </activity>
