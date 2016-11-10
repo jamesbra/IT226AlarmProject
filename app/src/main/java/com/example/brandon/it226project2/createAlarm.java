@@ -19,7 +19,7 @@ public class createAlarm extends AppCompatActivity  {
         Button timerAlarmButton = (Button) findViewById(R.id.timer_alarm_button);
         Button specificAlarmButton = (Button) findViewById(R.id.specific_alarm_button);
         Button location = (Button) findViewById(R.id.location_button);
-        Button cancelButton = (Button) findViewById(R.id.cancel_button);
+
         //buildCurrentDate();
         location.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -48,15 +48,7 @@ public class createAlarm extends AppCompatActivity  {
             }
         });
 
-        cancelButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent (createAlarm.this, AlarmSoundService.class);
-                PendingIntent sender = PendingIntent.getBroadcast(createAlarm.this,0,intent,0);
-                AlarmManager alarm_manager = (AlarmManager) getSystemService(ALARM_SERVICE);
-                alarm_manager.cancel(sender);
-            }
-        });
+
 
     }
 
