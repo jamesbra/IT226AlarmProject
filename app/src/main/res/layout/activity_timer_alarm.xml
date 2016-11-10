@@ -10,4 +10,60 @@
         android:paddingBottom="@dimen/activity_vertical_margin"
         tools:context="com.example.brandon.it226project2.TimerAlarm">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/setDay"
+        android:contextClickable="false"
+        android:textAllCaps="false"
+        android:hint="Days until alarm goes off"
+        android:layout_marginTop="44dp"
+        android:layout_below="@+id/mText"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:id="@+id/customMessage"
+        android:hint="Enter a message to be displayed"
+        android:layout_below="@+id/setMin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Timer"
+        android:id="@+id/mText"
+        android:textColor="#000000"
+        android:textSize="35dp"
+        android:layout_marginTop="34dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/setMin"
+        android:selectAllOnFocus="false"
+        android:layout_width="237dip"
+        android:hint="Minutes until alarm goes off"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/setDay"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:text="Set Timer"
+        android:id="@+id/startTimer"
+        android:layout_below="@+id/customMessage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp" />
+
+
 </RelativeLayout>
