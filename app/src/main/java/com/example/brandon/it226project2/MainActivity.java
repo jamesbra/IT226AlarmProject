@@ -13,7 +13,7 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
-    AlarmManager alarm_manager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,14 +21,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        alarm_manager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        //alarm_manager = (AlarmManager) getSystemService(ALARM_SERVICE);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-
+        Intent createAlarmIntent = new Intent(MainActivity.this,createAlarm.class);
+        startActivity(createAlarmIntent);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent createAlarmIntent = new Intent(MainActivity.this,createAlarm.class);
-                startActivity(createAlarmIntent);
+
             }
         });
     }

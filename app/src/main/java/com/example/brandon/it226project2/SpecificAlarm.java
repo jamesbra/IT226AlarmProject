@@ -144,18 +144,18 @@ public class SpecificAlarm extends AppCompatActivity {
             timeSelected.setText(output);
         }
     };
-    public void showDatePickerDialog(View v){
-        DialogFragment myFragment = new DateDialogFragment();
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        myFragment.show(ft,"DatePicker");
-
-        //myFragment.show(getSupportFragmentManager(), "datePicker");
-    }
-
-    public void showTimePickerDialog(View v){
-        DialogFragment myFragment = new TimeDialogFragment();
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        myFragment.show(ft,"TimePicker");
-
-    }
+//    public void showDatePickerDialog(View v){
+//        DialogFragment myFragment = new DateDialogFragment();
+//        FragmentTransaction ft = getFragmentManager().beginTransaction();
+//        myFragment.show(ft,"DatePicker");
+//
+//        //myFragment.show(getSupportFragmentManager(), "datePicker");
+//    }
+//
+//    public void showTimePickerDialog(View v){
+//        DialogFragment myFragment = new TimeDialogFragment();
+//        FragmentTransaction ft = getFragmentManager().beginTransaction();
+//        myFragment.show(ft,"TimePicker");
+//
+//    }
 }
